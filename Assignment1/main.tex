@@ -8,7 +8,7 @@
 
 \title{EE1204 Assignment 1}
 \author{Arjun Pavanje}
-\date{March 2025}
+\date{EE24BTECH11005}
 
 \begin{document}
 
@@ -425,7 +425,6 @@ E =
 + 3 (\cos\phi - \sin\phi) \hat{\phi} 
 + 4 \hat{z}.
 \end{align*}
-
 \begin{align*}
 |\vec{F}|^2 &= 16 + \left[ (\cos\phi + \sin\phi)^2 + (\cos\phi - \sin\phi)^2 \right] + 4, \\
 &= 16 + \left[ \cos^2\phi + 2\cos\phi\sin\phi + \sin^2\phi 
@@ -433,6 +432,14 @@ E =
 &= 16 + (2) + 4, \\
  &= 38 + 24 (\cos\phi + \sin\phi).
 \end{align*}
+\pagebreak
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.6\columnwidth]{figs/fig1.png}
+    \caption{Field Lines}
+   \label{label}
+\end{figure}
+Code used may be found at, \newline \url{https://github.com/ArjunPavanje/EE1204/blob/main/Assignment1/codes/py1.py} \newline
 \textbf{(b)} $\vec{F}$ at $\phi = \frac{\pi}{4}$,
 \begin{align*}
 \vec{F}_\phi &= 
@@ -444,8 +451,15 @@ E =
     + s \hat{\phi} 
     - 2 \hat{z}.
 \end{align*}
-
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.6\columnwidth]{figs/fig2.png}
+    \caption{Field Lines}
+   \label{label}
+\end{figure}
+Code used may be found at, \newline \url{https://github.com/ArjunPavanje/EE1204/blob/main/Assignment1/codes/py2.py} \newline
 Magnitude of $\vec{F}$,
+
 \begin{align*}
 |\vec{F}|^2 &= 
     \frac{160}{(s^2+1)^2} 
@@ -530,6 +544,7 @@ Field is conservative.\newline \newline
    \label{label}
 \end{figure}
 \pagebreak
+Code used may be found at, \newline \url{https://github.com/ArjunPavanje/EE1204/blob/main/Assignment1/codes/field.py} \newline
 To find the total electric field at a point in space due to these charges, you add the individual fields (by superposition),
 \begin{align*}
 E_{\text{total}} = E_1 + E_2 + E_3 + E_4
@@ -562,6 +577,7 @@ E_{\text{total}} = E_1 + E_2 + E_3 + E_4
    \label{label}
 \end{figure}
 \pagebreak
+Code used may be found at, \newline \url{https://github.com/ArjunPavanje/EE1204/blob/main/Assignment1/codes/pot.py} \newline
 To find the total electric potential at a point in space due to these charges, you add the individual potentials (by superposition),
 \begin{align*}
 V_{\text{total}} = V_1 + V_2 + V_3 + V_4
