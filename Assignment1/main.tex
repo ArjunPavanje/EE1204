@@ -508,8 +508,8 @@ F &=
 \begin{align*}
 \nabla \times \mathbf{F} &= \frac{1}{r} \left( \frac{\partial f_z}{\partial r} - \frac{\partial f_r}{\partial z} \right) \hat{\boldsymbol{\phi}} 
 + \frac{1}{r} \left( \frac{\partial (r f_\phi)}{\partial z} - \frac{\partial f_z}{\partial \phi} \right) \hat{\mathbf{r}} 
-+ \frac{1}{r} \left( \frac{\partial f_r}{\partial \phi} - \frac{\partial (r f_\phi)}{\partial r} \right) \hat{\mathbf{z}} \\begin{align*}10pt]
-&= \frac{1}{r} [3 (\cos\phi - \sin\phi) + 3 (\cos\phi - \sin\phi)] \hat{\mathbf{z}} \\begin{align*}10pt]
++ \frac{1}{r} \left( \frac{\partial f_r}{\partial \phi} - \frac{\partial (r f_\phi)}{\partial r} \right) \hat{\mathbf{z}} \\
+&= \frac{1}{r} [3 (\cos\phi - \sin\phi) + 3 (\cos\phi - \sin\phi)] \hat{\mathbf{z}} \\
 &= 0
 \end{align*}
 
@@ -606,7 +606,7 @@ Simplifying,
 
 Thus, the potential energy of the configuration is,
 \begin{align*}
-U = \frac{q^2}{4\pi\epsilon_0} (1 - 2\sqrt{2}).
+U = \frac{1}{4\pi\epsilon_0} (1 - 2\sqrt{2}).
 \end{align*}
 
 \textbf{(d)} Divergence of the electric field\\
@@ -712,7 +712,7 @@ Substituting $V(r) = V_0 e^{-\frac{r}{a}} $,
 \end{align*}
 At $ r = a $
 \begin{align*}
-    \rho = \frac{V_0 \epsilon_0e^{-\frac{r}{a}}}{a^2}
+  \rho = \frac{V_0 \epsilon_0e^{-1}}{a^2}
 \end{align*}
 \textbf{(b)}
 \begin{align*}
@@ -796,15 +796,15 @@ Thus, the total charge is zero.\newline \newline
 
 Substituting $ V(z=0) = V(z=d) = 0 $,
 \begin{align*}
-V = \frac{\rho z (d-z)}{2 \epsilon_0}\hat{k}
+V = \frac{\rho z (d-z)}{2 \epsilon_0} , \quad 0 \le x \le d
 \end{align*}
-
+\textbf{(b)}
 Electric Field Intensity ($E$)
 \begin{align*}
 E = -\nabla V
 \end{align*}
 \begin{align*}
-E = \left(\frac{\rho}{\epsilon_0} \left(z - \frac{d}{2}\right)\right) \quad \hat{k}
+E = \left(\frac{\rho}{\epsilon_0} \left(z - \frac{d}{2}\right)\right) \quad \hat{k}, \quad 0 \le x \le d
 \end{align*}
 
 \textbf{(c)}If $V(z=d) = V_0$\newline
@@ -825,12 +825,12 @@ C_1 &= \frac{V_0}{d} + \frac{\rho_0 d}{2 \epsilon_0}
 \end{align*}
 We finally get potential between the plates to be,
 \begin{align*}
-V &= \left( \frac{\rho_0 z (d-z)}{2 \epsilon_0} + \frac{V_0 z}{d} \right) \hat{r}
+V &= \left( \frac{\rho_0 z (d-z)}{2 \epsilon_0} + \frac{V_0 z}{d} \right), \quad 0 \le x \le d
 \end{align*}
 Electric Field Intensity $(\vec{E})$ is given by,
 \begin{align*}
 \vec{E} &= -\nabla V \\
-\vec{E} &= \left[ \frac{\rho_0}{\epsilon_0} \left( z - \frac{d}{2} \right) - \frac{V_0}{d} \right]
+\vec{E} &= \left[ \frac{\rho_0}{\epsilon_0} \left( z - \frac{d}{2} \right) - \frac{V_0}{d} \right], \quad 0 \le x \le d
 \end{align*}
 
 
