@@ -5,7 +5,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{circuitikz}
-
+\usepackage{listings}
 \title{EE1204 Assignment 1}
 \author{Arjun Pavanje}
 \date{EE24BTECH11005}
@@ -834,6 +834,132 @@ Electric Field Intensity $(\vec{E})$ is given by,
 \end{align*}
 
 
+Codes used,\newline
+\textbf{5(a)}
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+
+phi = np.linspace(-10, 10, 200)
+F = np.sqrt(38 + 24*(np.cos(phi) + np.sin(phi)))
+
+plt.plot(phi, F, label="|F|" )
+plt.legend()
+plt.xlabel("s")
+plt.ylabel("|F|")
+plt.title("|F| at $s=3$ ")
+plt.savefig("../figs/fig1.png")
+plt.show()
+\end{lstlisting}
+\textbf{5(b)}
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+
+phi = np.pi/4
+s = np.linspace(-10, 10, 200)
+F = np.sqrt((160/((s**2+1)**2)) + 22 + (240*np.sqrt(2)/(s**2 + 1))  )
+
+plt.plot(s, F, label="|F| vs s")
+plt.legend()
+plt.xlabel("s")
+plt.ylabel("|F|")
+plt.title("|F| at $\phi=\pi/4$")
+plt.savefig("../figs/fig2.png")
+plt.show()
+\end{lstlisting}
+\textbf{6(a)}
+\begin{lstlisting}
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import colormaps
+
+def E_charge(X, Y, q, position):
+    X1 = X - position[0]
+    Y1 =  Y- position[1]
+    norm = np.sqrt(X1**2 + Y1**2)
+    return q/(4*np.pi*e0)*(X-position[0])/norm**3, q/(4*np.pi*e0)*(Y-position[1])/norm**3 
+
+def E_field(X, Y):
+    E1 = E_charge(X, Y, -q, (1, 0))
+    E2 = E_charge(X, Y, q, (0, 1))
+    E3 = E_charge(X, Y, -q, (-1, 0))
+    E4 = E_charge(X, Y, q, (0, -1))
+    return E1[0]+E2[0]+E3[0]+E4[0], E1[1]+E2[1]+E3[1]+E4[1] 
+
+q = 1
+e0 = 8.854e-12
+
+x = np.linspace(-2, 2, 20)
+y = np.linspace(-2, 2, 20)
+X, Y = np.meshgrid(x, y)
+
+U, V = E_field(X, Y)
+
+# Compute the magnitude of the vectors
+magnitude = np.sqrt(U**2 + V**2)
+
+for i in range(0, len(magnitude)):
+    for j in range(0, len(magnitude)):
+        if magnitude[i][j] > 1e11:
+            magnitude[i][j] = 0
+
+# Plot using quiver, setting the color using a colormap
+plt.figure(figsize=(6, 6))
+quiver_plot = plt.quiver(X, Y, U/magnitude, V/magnitude, magnitude, cmap='plasma')
+
+# Add a colorbar
+plt.colorbar(quiver_plot, label='Magnitude')
+
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.title("Vector Field")
+plt.savefig("../figs/field.png")
+plt.show()
+\end{lstlisting}
+
+\textbf{6(b)}
+\begin{lstlisting}
+
+import matplotlib.pyplot as plt
+import numpy as np
+#from matplotlib import colormaps
+
+def potential_charge(X, Y, q, position):
+    X1 = X - position[0]
+    Y1 =  Y- position[1]
+    R = (np.sqrt(X1**2 + Y1**2))
+    if (R.all() == 0):
+        R = 1e-9
+    return q/(4*np.pi*e0)*(1/R)
+def potential_field(X, Y):
+    V1 = potential_charge(X, Y, -q, (1, 0))
+    V2 = potential_charge(X, Y, q, (0, -1))
+    V3 = potential_charge(X, Y, -q, (-1, 0))
+    V4 = potential_charge(X, Y, q, (0, 1))
+    #V = V1 + V2 + V3 + V4
+    return V1+V2+V3+V4
+q = 1
+e0 = 8.854e-12
+
+x = np.linspace(-2, 2, 50)
+y = np.linspace(-2, 2, 50)
+X, Y = np.meshgrid(x, y)
+
+#V = np.zeros_like(Y)
+
+V = potential_field(X, Y)
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection="3d")
+ax.plot_surface(X, Y, V, cmap="plasma", edgecolor="none")
+ax.set_xlabel("X-axis")
+ax.set_ylabel("Y-axis")
+ax.set_zlabel("Potential")
+plt.savefig("../figs/pot.png")
+plt.show()
+
+\end{lstlisting}
 
 \end{document}
 
