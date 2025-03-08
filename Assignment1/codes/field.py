@@ -9,9 +9,9 @@ def E_charge(X, Y, q, position):
     return q/(4*np.pi*e0)*(X-position[0])/norm**3, q/(4*np.pi*e0)*(Y-position[1])/norm**3 
 
 def E_field(X, Y):
-    E1 = E_charge(X, Y, q, (1, 0))
+    E1 = E_charge(X, Y, -q, (1, 0))
     E2 = E_charge(X, Y, q, (0, 1))
-    E3 = E_charge(X, Y, q, (-1, 0))
+    E3 = E_charge(X, Y, -q, (-1, 0))
     E4 = E_charge(X, Y, q, (0, -1))
     return E1[0]+E2[0]+E3[0]+E4[0], E1[1]+E2[1]+E3[1]+E4[1] 
 
@@ -42,5 +42,6 @@ plt.colorbar(quiver_plot, label='Magnitude')
 plt.xlabel("X")
 plt.ylabel("Y")
 plt.title("Vector Field")
+plt.savefig("../figs/field.png")
 plt.show()
-plt.show()
+
