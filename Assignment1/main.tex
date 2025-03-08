@@ -44,7 +44,7 @@
 
 \label{fig:my_label}
 \end{figure}
-Field on z-axis ($E$): $E = E_1 + E_2$
+Field on z-axis ($E$): $E = E_1 + E_2$ (By superposition)
 
 \begin{itemize}
     \item $E_1$: Field due to $Q_1$
@@ -53,10 +53,10 @@ Field on z-axis ($E$): $E = E_1 + E_2$
 
 \begin{align*}
 E_1 &= \frac{q}{4 \pi \epsilon_0} \frac{|x-\frac{d}{2}| }{(x - \frac{d}{2})^3} \hat{k}, \quad
-E_2 = -\frac{q}{4 \pi \epsilon_0} \frac{|x + \frac{d}{2}|}{(x + \frac{d}{2})^3} \mathbf{\hat{k}} \\
+E_2 = \frac{q}{4 \pi \epsilon_0} \frac{|x + \frac{d}{2}|}{(x + \frac{d}{2})^3} \mathbf{\hat{k}} \\
 E &= E_1 + E_2 = \frac{q}{4 \pi \epsilon_0} 
 \left[ 
-\frac{|x - \frac{d}{2}|}{(x - \frac{d}{2})^3} - \frac{|x + \frac{d}{2}|}{(x + \frac{d}{2})^3}
+\frac{|x - \frac{d}{2}|}{(x - \frac{d}{2})^3} + \frac{|x + \frac{d}{2}|}{(x + \frac{d}{2})^3}
 \right]\mathbf{\hat{k}}
 \end{align*}
 
@@ -81,7 +81,7 @@ E &= \frac{q}{2 \pi \epsilon_0}
 Case 3: $-\frac{d}{2} < z < \frac{d}{2}$
 
 \begin{align*}
-E &= \frac{q}{2 \pi \epsilon_0} 
+E &= \frac{q}{4 \pi \epsilon_0} 
 \left[ 
 \frac{1}{(z + \frac{d}{2})^2} - \frac{1}{(z - \frac{d}{2})^2}
 \right] (\mathbf{\hat{k}})\\
@@ -151,7 +151,7 @@ E &= -\frac{q}{4 \pi \epsilon_0}
 \frac{1}{(z + \frac{d}{2})^2} + 
 \frac{1}{(z - \frac{d}{2})^2}
 \right) \mathbf{\hat{k}} \\ 
-&= -\frac{q}{4 \pi \epsilon_0} 
+&= -\frac{q}{2 \pi \epsilon_0} 
 \left( 
 \frac{z^2 + (\frac{d}{2})^2}{ (z^2 - (\frac{d}{2})^2)^2 } \right) \mathbf{\hat{k}}
 \end{align*}
@@ -190,7 +190,7 @@ E &= \frac{q}{4 \pi \epsilon_0}
 \end{figure}
 Say $Q_1 = +Q$ is the movable charge, $Q_2 = -Q$ is the stationary charge.
 
-At equilibrium, moving force on $Q$ is balanced by electrostatic force:
+At equilibrium, spring force on $+Q$ is balanced by electrostatic force:
 \begin{align*}
 \frac{1}{4 \pi \epsilon_0} \frac{Q^2}{(x-d)^2} = kx
 \end{align*}
@@ -210,23 +210,15 @@ Differentiating,
 \end{align*}
 
 \begin{align*}
-x = d \quad \text{(minimum)}
+x = d \quad \text{(minimum)}, \frac{d}{3} \quad \text{(maximum)}
 \end{align*}
 
 \begin{align*}
-x = \frac{d}{3} \quad \text{(maximum)}
+Q_{\text{max}} = \sqrt{\frac{16\pi \epsilon_0 k d^3}{27}}
 \end{align*}
+seperation at equilibrium = $\frac{2d}{3}$
 
-\begin{align*}
-Q_{\text{max}} = \sqrt{\frac{16\pi \epsilon_0 k d^3}{9}}
-\end{align*}
-
-Seperation,
-\begin{align*}
-x = \frac{2d}{3}
-\end{align*}
-
-
+When a charge larger than $Q_{max}$ is added, columb force will overcome spring force and the two spheres will end up colliding
 
 3. A flux density field is given as
 \begin{align*}
